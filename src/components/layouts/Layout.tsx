@@ -1,14 +1,13 @@
-import { FC, ReactNode } from 'react'
+import { NavBar } from '@src/components/layouts'
 import Head from 'next/head'
-import { Footer, NavBar } from '@src/components/layouts'
-import { footerItems, navItems } from '@libs/constants'
+import { FC, ReactNode } from 'react'
 
 export interface PageLayoutProps {
     children: ReactNode
 }
 
 export const PageLayout: FC<PageLayoutProps> = ({ children }) => {
-    const SITE_TITLE = 'Next.js Boilerplate'
+    const SITE_TITLE = 'Bookstore Blazesoft'
 
     return (
         <>
@@ -27,11 +26,10 @@ export const PageLayout: FC<PageLayoutProps> = ({ children }) => {
                 <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0" />
             </Head>
             <main>
-                <NavBar items={navItems} />
+                <NavBar />
                 <div className="relative inset-x-0 m-auto flex min-h-screen w-full max-w-[1920px] flex-col items-center justify-center overflow-hidden pt-24">
                     {/* pt-24 is the height of NavBar */}
                     {children}
-                    <Footer items={footerItems} />
                 </div>
             </main>
         </>
